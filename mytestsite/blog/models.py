@@ -9,8 +9,7 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
-    created_date = models.DateTimeField(
-        default=timezone.now)
+    created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
@@ -28,4 +27,4 @@ class Post(models.Model):
 # models.ForeignKey() : 다른 모델에 대한 링크를 의미
 # 공식문서 참조 https://docs.djangoproject.com/en/3.2/ref/models/fields/ 
 
-# 생성된 데이터를 DB에 반영(makemigrations)
+# 생성된 데이터를 DB에 반영(makemigrations - migrate)
