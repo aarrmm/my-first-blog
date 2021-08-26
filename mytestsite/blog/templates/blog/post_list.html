@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Sunsetar1126's blog</title>
+        <title>sunsetar1126's blog</title>
     </head>
     <body>
         <div>
@@ -9,7 +9,7 @@
         </div>
         {% for post in posts %}
             <div>
-                <p>created : {{ post.created_date }}</p>
+                <p>생성일 : {{ post.created_date }}</p>
                 <h1><a href="">{{ post.title }}</a></h1>
                 <p>{{ post.text|linebreaksbr }}</p>
                 <hr>
