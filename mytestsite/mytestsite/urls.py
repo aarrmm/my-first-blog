@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib import admin
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('blog.urls'))
+    #  http://127.0.0.1:8000/에 접속요청하면
+    #  blog.urls로 전송하여 추가 명령을 찾게됨
 ]
