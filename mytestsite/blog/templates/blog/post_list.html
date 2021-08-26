@@ -9,8 +9,8 @@
         </div>
         {% for post in posts %}
             <div>
-                <p>{{ post.created_date }}</p>
-                <h1><a href="">{{ post.title }}</a> </h1>
+                <p>created : {{ post.created_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
                 <p>{{ post.text|linebreaksbr }}</p>
                 <hr>
             </div>
