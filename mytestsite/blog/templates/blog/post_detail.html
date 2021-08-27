@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div>
+        {% if post.publisheded_date %}
+            <div>
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <p>생성일 : {{ post.created_date }}</p>
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
