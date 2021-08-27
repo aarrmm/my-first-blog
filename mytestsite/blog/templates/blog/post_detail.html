@@ -1,13 +1,22 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div>
-        {% if post.publisheded_date %}
-            <div>
-                {{ post.published_date }}
+    <div class="post">
+        <aside class="actions">
+            {% if user.is_authenticated %}
+                <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">
+                    {% include './icons/pencil-fill.svg' %}
+                </a>
+            {% endif %}
+        </aside>
+        {% if post.created_date %}
+            <div class="date">
+                {{ post.created_date }}
             </div>
         {% endif %}
-        <p>생성일 : {{ post.created_date }}</p>
+        <!--<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">
+            {% include './icons/pencil-fill.svg' %}
+        </a>-->
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
